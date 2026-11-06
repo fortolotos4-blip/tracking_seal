@@ -1,0 +1,372 @@
+
+/* =========================================
+   1. GOOGLE FONT & RESET
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #11101d;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   2. SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    background: #11101d;
+    padding: 15px;
+    z-index: 1100;
+    transition: all 0.4s ease;
+}
+
+.logo {
+    display: block;
+    font-size: 25px;
+    padding: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   3. MENU SIDEBAR
+========================================= */
+
+.menu-content {
+    position: relative;
+    height: calc(100vh - 80px);
+    width: 100%;
+    margin-top: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.menu-content::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-items {
+    width: 100%;
+    min-height: 100%;
+    list-style: none;
+    transition: all 0.4s ease;
+}
+
+.submenu-active .menu-items {
+    transform: translateX(-56%);
+}
+
+.menu-title {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 15px 20px;
+}
+
+.item a,
+.submenu-item {
+    display: inline-block;
+    width: 100%;
+    padding: 16px;
+    font-size: large;
+    border-radius: 12px;
+}
+
+.item i {
+    font-size: 12px;
+}
+
+.item a:hover,
+.submenu-item:hover,
+.submenu .menu-title:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.submenu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.submenu {
+    position: absolute;
+    top: 0;
+    right: calc(-100% - 26px);
+    width: 100%;
+    height: calc(100% + 100vh);
+    background: #11101d;
+    display: none;
+}
+
+.show-submenu ~ .submenu {
+    display: block;
+}
+
+.submenu .menu-title {
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.submenu .menu-title i {
+    margin-right: 10px;
+}
+
+
+/* =========================================
+   4. NAVBAR
+========================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 260px;
+    width: calc(100% - 260px);
+    height: 70px;
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+    background: #4070f4;
+
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 1000;
+
+    transition: all 0.4s ease;
+}
+
+.navbar #sidebar-close {
+    cursor: pointer;
+}
+
+
+/* =========================================
+   5. MAIN CONTENT
+========================================= */
+
+.main {
+    position: relative;
+
+    margin-left: 260px;
+    margin-top: 70px;
+
+    width: calc(100% - 260px);
+    min-height: calc(100vh - 70px);
+
+    /* Konten langsung di bawah navbar */
+    padding: 20px;
+
+    background: #ffffff;
+    color: #11101d;
+
+    font-size: 16px;
+    text-align: left;
+
+    transition: all 0.4s ease;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   6. CONTENT WRAPPER
+========================================= */
+
+.content-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   7. PAGE HEADER
+========================================= */
+
+.page-header {
+    margin: 0 0 20px;
+    padding: 0 0 15px;
+
+    text-align: left;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.page-header h2 {
+    margin: 0 0 5px;
+    padding: 0;
+
+    font-size: 24px;
+    font-weight: 600;
+    color: #11101d;
+}
+
+.page-header p {
+    margin: 0;
+    padding: 0;
+
+    color: #777777;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   8. BUTTON & GRID
+========================================= */
+
+.grid-test {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.grid-test form {
+    margin: 0;
+}
+
+.grid-test button {
+    border-radius: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    margin-top: 7.5px;
+}
+
+.btn-edit {
+    font-size: 12px;
+}
+
+.button_tambah {
+    padding-right: 10px;
+}
+
+.export_excel_data_seal {
+    padding: 5px;
+}
+
+
+/* =========================================
+   9. TABLE
+========================================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+td,
+th {
+    border: 1px solid #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.data-table,
+.tabel-data {
+    width: 100% !important;
+}
+
+.text_jumlah {
+    padding-left: 0;
+}
+
+
+/* =========================================
+   10. FORM
+========================================= */
+
+.form {
+    position: relative;
+    display: flex;
+    width: auto;
+}
+
+
+/* =========================================
+   11. SIDEBAR COLLAPSE
+========================================= */
+
+.sidebar.close {
+    left: -260px;
+}
+
+.sidebar.close ~ .navbar {
+    left: 0;
+    width: 100%;
+}
+
+.sidebar.close ~ .main {
+    margin-left: 0;
+    width: 100%;
+}
+
+
+/* =========================================
+   12. RESPONSIVE
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    .sidebar {
+        width: 260px;
+    }
+
+    .navbar {
+        left: 260px;
+        width: calc(100% - 260px);
+    }
+
+    .main {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+        padding: 15px;
+    }
+
+    .page-header h2 {
+        font-size: 21px;
+    }
+
+    .grid-test {
+        gap: 8px;
+    }
+}
